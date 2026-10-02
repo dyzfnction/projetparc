@@ -12,7 +12,7 @@ export async function POST(req: Request) {
 
   // Vérification des champs (mot de passe obligatoire à l'inscription)
   const result = validateProfil(body, true);
-  if (result.error) return jsonError(result.error, 400);
+  if (!result.data) return jsonError(result.error, 400);
   const { prenom, nom, email, motdepasse } = result.data;
 
   const db = await getDb();

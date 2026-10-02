@@ -20,7 +20,7 @@ export async function POST(req: Request) {
   if (!body) return jsonError("Requête invalide.", 400);
 
   const result = validateActivite(body);
-  if (result.error) return jsonError(result.error, 400);
+  if (!result.data) return jsonError(result.error, 400);
   const a = result.data; // données validées et converties
 
   const db = await getDb();

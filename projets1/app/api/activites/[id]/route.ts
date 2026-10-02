@@ -16,7 +16,7 @@ export async function PUT(req: Request, ctx: RouteContext<"/api/activites/[id]">
   if (!body) return jsonError("Requête invalide.", 400);
 
   const result = validateActivite(body);
-  if (result.error) return jsonError(result.error, 400);
+  if (!result.data) return jsonError(result.error, 400);
   const a = result.data;
 
   const db = await getDb();

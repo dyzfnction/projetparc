@@ -27,7 +27,7 @@ export async function PUT(req: Request) {
   if (!body) return jsonError("Requête invalide.", 400);
 
   const result = validateProfil(body, false);
-  if (result.error) return jsonError(result.error, 400);
+  if (!result.data) return jsonError(result.error, 400);
   const { prenom, nom, email, motdepasse } = result.data;
 
   const db = await getDb();
