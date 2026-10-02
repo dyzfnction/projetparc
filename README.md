@@ -27,7 +27,7 @@ JWT_SECRET=une_longue_chaine_secrete
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
 
-Créer la base de données avec des données d'exemple (⚠️ efface la base existante) :
+Remplir la base avec des données de test (comptes, activités, réservations) :
 
 ```bash
 npm run db:init
