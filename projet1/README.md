@@ -22,13 +22,9 @@ DATABASE_NAME=database.db
 JWT_SECRET=une_longue_chaine_secrete
 ```
 
-`JWT_SECRET` est une chaîne aléatoire qui sert à signer les jetons de connexion. Pour en générer une :
-
 ```bash
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
-
-Puis copier le résultat après `JWT_SECRET=`.
 
 Créer la base de données avec des données d'exemple (⚠️ efface la base existante) :
 
