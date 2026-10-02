@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" role="img" aria-label="Coucher de soleil sur un lac et des montagnes">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5b21b6"/>
+      <stop offset=".55" stop-color="#ea580c"/>
+      <stop offset="1" stop-color="#fdba74"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#4c1d95"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#sky)"/>
+  <circle cx="320" cy="300" r="90" fill="#fde68a" opacity=".95"/>
+  <path d="M0 300 L110 190 L200 270 L320 160 L450 290 L540 210 L640 280 L640 480 L0 480 Z" fill="#7c2d12" opacity=".55"/>
+  <path d="M0 340 L90 270 L190 330 L300 250 L420 340 L520 280 L640 345 L640 480 L0 480 Z" fill="#2e1065"/>
+  <rect y="365" width="640" height="115" fill="url(#lake)"/>
+  <path d="M240 385 h160 M260 405 h120 M285 425 h70 M60 400 h90 M480 410 h100" stroke="#fde68a" stroke-width="4" stroke-linecap="round" opacity=".6"/>
+  <g fill="#1c1917">
+    <path d="M40 368 l26 -70 l26 70 z"/><path d="M82 368 l22 -56 l22 56 z"/>
+    <path d="M520 368 l26 -76 l26 76 z"/><path d="M570 368 l20 -54 l20 54 z"/>
+    <path d="M600 368 l18 -44 l18 44 z"/>
+  </g>
+  <path d="M150 440 q40 16 80 0 l-6 10 q-34 10 -68 0 z" fill="#1c1917"/>
+  <line x1="190" y1="440" x2="200" y2="402" stroke="#1c1917" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="200" cy="398" r="6" fill="#1c1917"/>
+</svg>

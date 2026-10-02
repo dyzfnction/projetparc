@@ -1,0 +1,107 @@
+/* =========================================================================
+   Styles globaux du site (importés une seule fois, dans app/layout.tsx)
+   ========================================================================= */
+
+/* Import de Tailwind CSS : donne accès à toutes les classes utilitaires (flex, p-4, text-sm...) */
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------
+   Thème : polices et palette "Orange sunset"
+   Chaque variable --color-xxx crée automatiquement les classes Tailwind
+   correspondantes : --color-primary-600 donne bg-primary-600, text-primary-600, etc.
+   Pour changer les couleurs du site, il suffit de modifier les valeurs ici.
+   ------------------------------------------------------------------------- */
+@theme inline {
+  /* Polices : variables créées par next/font dans fonts/fonts.tsx */
+  --font-sans: var(--font-inter); /* texte courant (classe font-sans) */
+  --font-display: var(--font-outfit); /* titres (classe font-display) */
+
+  /* Couleurs neutres */
+  --color-cream: #fff8f1; /* fond de la page */
+  --color-ink: #1c1917; /* texte principal, pied de page (noir chaud) */
+  --color-muted: #6b625b; /* texte secondaire (gris) */
+  --color-line: #f0e2d4; /* bordures et séparateurs */
+
+  /* Couleur principale : orange (boutons, liens, menu actif). 50 = très clair, 900 = très foncé */
+  --color-primary-50: #fff4ea;
+  --color-primary-100: #ffe3cc;
+  --color-primary-500: #f97316;
+  --color-primary-600: #ea580c;
+  --color-primary-700: #c2410c;
+  --color-primary-900: #7c2d12;
+
+  /* Couleur d'accent : violet (grand titre de l'accueil, badges "presque complet") */
+  --color-accent-100: #ede9fe;
+  --color-accent-400: #8b5cf6;
+  --color-accent-600: #5b21b6;
+  --color-accent-900: #2e1065;
+}
+
+/* Fond et couleur de texte de toute la page */
+body {
+  background: var(--color-cream);
+  color: var(--color-ink);
+}
+
+/* Tous les titres utilisent la police des titres */
+h1,
+h2,
+h3 {
+  font-family: var(--font-display);
+}
+
+/* -------------------------------------------------------------------------
+   Composants réutilisables : classes maison, utilisées partout dans le site.
+   @apply regroupe plusieurs classes Tailwind sous un seul nom.
+   ------------------------------------------------------------------------- */
+@layer components {
+  /* Conteneur centré, largeur max 1152px, marges sur les côtés (plus grandes à partir des tablettes) */
+  .container-page {
+    @apply mx-auto w-full max-w-6xl px-4 sm:px-6;
+  }
+
+  /* Base de tous les boutons : forme arrondie, texte en gras, grisé quand désactivé.
+     À combiner avec une variante : class="btn btn-primary" */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-colors disabled:cursor-not-allowed disabled:opacity-60;
+  }
+  /* Bouton principal : orange plein */
+  .btn-primary {
+    @apply bg-primary-600 text-white hover:bg-primary-700;
+  }
+  /* Bouton secondaire : blanc avec bordure */
+  .btn-secondary {
+    @apply border border-line bg-white text-ink hover:bg-primary-50;
+  }
+  /* Bouton de suppression : rouge plein (action définitive) */
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  /* Bouton d'annulation : contour rouge, plus discret */
+  .btn-ghost-danger {
+    @apply border border-red-200 bg-white text-red-700 hover:bg-red-50;
+  }
+
+  /* Libellé au-dessus d'un champ de formulaire */
+  .label {
+    @apply mb-1.5 block text-sm font-medium text-ink;
+  }
+  /* Champ de formulaire (input, select, textarea) : bordure orange et halo quand il est sélectionné */
+  .input {
+    @apply w-full rounded-xl border border-line bg-white px-4 py-2.5 text-ink outline-none transition placeholder:text-muted/70 focus:border-primary-500 focus:ring-4 focus:ring-primary-100;
+  }
+
+  /* Carte blanche arrondie avec bordure et légère ombre */
+  .card {
+    @apply rounded-2xl border border-line bg-white shadow-sm;
+  }
+
+  /* Message d'erreur (rouge) */
+  .alert-error {
+    @apply rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-800;
+  }
+  /* Message de succès / information (orange clair) */
+  .alert-success {
+    @apply rounded-xl border border-primary-100 bg-primary-50 px-4 py-3 text-sm text-primary-700;
+  }
+}
