@@ -31,7 +31,7 @@ export default async function Footer() {
         {/* Colonne 2 : horaires */}
         <div className="text-sm">
           <p className="font-semibold text-white">Horaires</p>
-          <p className="mt-2 text-stone-400">Tous les jours de 9h à 19h</p>
+          <p className="mt-2 text-stone-400">Tous les jours de 8h à 20h</p>
         </div>
 
         {/* Colonne 3 : liens, différents selon le profil */}
