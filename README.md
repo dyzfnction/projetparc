@@ -12,10 +12,11 @@ Projet réalisé en binôme par :
 ## Installation
 
 ```bash
+cd projet1
 npm install
 ```
 
-Créer un fichier `.env.local` à la racine :
+Créer un fichier `.env.local` dans `projet1/` :
 
 ```
 DATABASE_NAME=database.db
@@ -64,6 +65,8 @@ Puis ouvrir http://localhost:3000.
 **Bonus** : tableau de bord administrateur avec statistiques (utilisateurs, réservations, taux de remplissage, réservations par type, activités les plus réservées).
 
 ## Structure
+
+Toutes les sources sont dans `projet1/` :
 
 ```
 app/                 pages et routes API (App Router)
